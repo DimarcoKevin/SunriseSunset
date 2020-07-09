@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
 
     // async task to get the "where on earth ID"
     inner class LocationAsyncTask: AsyncTask<String, String, String>() {
+
+        // sets up the connection to the URL destination
         override fun doInBackground(vararg p0: String?): String {
             var urlConnection: HttpURLConnection? = null
 
@@ -69,8 +71,9 @@ class MainActivity : AppCompatActivity() {
             return ""
         }
 
+        // search through the json file for "where on earth ID" then starts next Async Task
         override fun onProgressUpdate(vararg values: String) {
-            // fires during progress updates
+
             try {
                 var json = JSONArray(values[0])
                 var jsonObject = json.getJSONObject(0)
@@ -90,14 +93,13 @@ class MainActivity : AppCompatActivity() {
             // NOT NEEDED FOR THIS PROJECT
         }
 
+        // searches through the json file for sunrise and sunset and then gathers a substring for the time of day
         override fun onProgressUpdate(vararg values: String) {
-            // fires during progress updates
+
             try {
                 var json = JSONObject(values[0])
                 var sunrise = json.getString("sun_rise")
                 var sunset = json.getString("sun_set")
-                // TODO : parse sunrise/sunset
-                // YYYY-MM-DDTHH:MM:SS.??????+TimeZone
                 sunrise = sunrise.substring(11, 19)
                 sunset = sunset.substring(11, 19)
 
@@ -111,6 +113,7 @@ class MainActivity : AppCompatActivity() {
             // NOT NEEDED FOR THIS PROJECT
         }
 
+        // sets up the connection to the URL destination
         override fun doInBackground(vararg p0: String?): String {
             var urlConnection: HttpsURLConnection? = null
 
