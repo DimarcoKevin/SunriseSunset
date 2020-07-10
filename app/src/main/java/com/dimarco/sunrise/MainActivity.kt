@@ -3,6 +3,7 @@ package com.dimarco.sunrise
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONArray
@@ -51,10 +52,12 @@ class MainActivity : AppCompatActivity() {
 
     // clickable clear button
     fun clickClear(view: View) {
-        val input = R.string.input_hint
-        val output = R.string.dashes
-        txtInput.hint = input.toString()
-        txtOutput.text = output.toString()
+        val input = resources.getString(R.string.input_hint)
+        val output = resources.getString(R.string.dashes)
+
+        txtInput.setText(" ")
+        txtInput.hint = input
+        txtOutput.text = output
     }
 
     // async task to get the "where on earth ID"
