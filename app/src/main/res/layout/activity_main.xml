@@ -23,19 +23,36 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:ems="10"
+            android:importantForAutofill="no"
             android:gravity="center_horizontal"
-            android:hint="Enter a city"
+            android:hint="@string/input_hint"
             android:inputType="textPersonName"
             android:textSize="32sp" />
 
-        <Button
-            android:id="@+id/button"
+        <LinearLayout
+            android:id="@+id/llButtons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
-            android:onClick="getSunriseSunset"
-            android:text="@android:string/search_go" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:onClick="getSunriseSunset"
+                android:text="@string/search" />
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:onClick="clickClear"
+                android:text="@string/clear" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/txtOutput"
@@ -43,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
-            android:text="-------------"
+            android:text="@string/dashes"
             android:textSize="32sp" />
 
     </LinearLayout>
