@@ -49,6 +49,14 @@ class MainActivity : AppCompatActivity() {
         LocationAsyncTask().execute(url)
     }
 
+    // clickable clear button
+    fun clickClear(view: View) {
+        val input = R.string.input_hint
+        val output = R.string.dashes
+        txtInput.hint = input.toString()
+        txtOutput.text = output.toString()
+    }
+
     // async task to get the "where on earth ID"
     inner class LocationAsyncTask: AsyncTask<String, String, String>() {
 
