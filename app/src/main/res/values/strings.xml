@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sunrise</string>
+    <string name="input_hint">Enter a city</string>
+    <string name="search">Search</string>
+    <string name="clear">Clear</string>
+    <string name="dashes">-------------</string>
 </resources>
