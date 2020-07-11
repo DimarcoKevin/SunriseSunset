@@ -111,10 +111,11 @@ class MainActivity : AppCompatActivity() {
                 var json = JSONObject(values[0])
                 var sunrise = json.getString("sun_rise")
                 var sunset = json.getString("sun_set")
+                var date = sunrise.substring(0, 10)
                 sunrise = sunrise.substring(11, 19)
                 sunset = sunset.substring(11, 19)
 
-                txtOutput.text = "Sunrise: $sunrise \nSunset: $sunset"
+                txtOutput.text = "Date: $date \n\nSunrise: $sunrise \nSunset : $sunset"
 
             } catch (ex: Exception) {  }
         }
