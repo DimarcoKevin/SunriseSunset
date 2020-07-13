@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
                 sunrise = sunrise.substring(11, 19)
                 sunset = sunset.substring(11, 19)
 
-                txtOutput.text = "Date: $date \n\nSunrise: $sunrise \nSunset : $sunset"
+                txtOutput.text = "Date: $date\n\nSunrise: $sunrise\nSunset : $sunset"
 
             } catch (ex: Exception) {  }
         }
